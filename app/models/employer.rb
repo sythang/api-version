@@ -1,0 +1,2 @@
+class Employer < Account
+end

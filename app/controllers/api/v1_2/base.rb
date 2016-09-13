@@ -1,0 +1,22 @@
+module API
+	module V1_2
+		class Base < Grape::API
+			prefix 'api'
+    	format :json
+			version 'v1.2',  using: :path, vendor: 'twitter', format: :json
+			
+			
+			mount API::V1_2::Users
+			
+			add_swagger_documentation \
+				info: {
+			    title: "ACE API DOCUMENTATION",
+			    description: "Documentation API Version 1.0",
+			    contact_name: "Le Sy Thang",
+			    contact_email: "sythang11@gmail.com",
+			    contact_url: "https://github.com/sythang"
+			  },
+			  api_version: 'v1'
+		end
+	end
+end
