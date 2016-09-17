@@ -1,0 +1,38 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="fields">
+    <label>Name</label>
+    <%= f.text_field :name %>
+  </div>
+  <div class="fields">
+    <label>Email</label>
+    <%= f.text_field :email %>
+  </div>
+  <br/>
+  <div class="fields">
+
+    <label>Skills</label>
+    <hr>
+    <%= f.fields_for :skills_users do |skill| %>
+      <div class="fields">
+        <label>Skill</label>
+        <%= skill.collection_select(:skill_id, Skill.all, :id, :name) %>
+        <label>Score</label>
+        <%= skill.text_field :score %>
+      </div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 	# before_action ->{ authenticate_account! :employer }
 	# current_account :worker
   
- 	before_action :authenticate_account!
+ 	# before_action :authenticate_account!
  	
 end

@@ -1,11 +1,8 @@
 module API
 	module V1_2
-		class Users < API::V1::Users
+		class Users < API::V1_2::Base
 			resource :users do
 				desc "Timeline" do
-        end
-        params do
-          use :pagination
         end
         get :time_line do
           {status: true, version: 'v1.2'}

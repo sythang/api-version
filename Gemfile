@@ -37,6 +37,7 @@ gem 'grape-entity', '~> 0.5.1'
 gem 'grape-swagger-rails', '~> 0.2.2'
 gem 'grape-swagger', '~> 0.23.0'
 gem 'grape-swagger-entity', '~> 0.1.4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
